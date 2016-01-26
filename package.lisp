@@ -37,4 +37,7 @@
            #:harden-session-cookie
            #:session-user
            #:delete-session-user
-           #:require-session-user))
+           #:require-session-user
+           #:session-csrf-token
+           #:delete-session-csrf-token
+           #:require-session-csrf-token))

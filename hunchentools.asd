@@ -29,7 +29,8 @@
   :license "MIT"
   :depends-on (#:hunchentoot
                #:alexandria
-               #:cl-ppcre)
+               #:cl-ppcre
+               #:ironclad)
   :components ((:file "package")
                (:file "abort" :depends-on ("package"))
                (:file "dispatcher" :depends-on ("package"))
