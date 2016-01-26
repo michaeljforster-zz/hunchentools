@@ -34,4 +34,7 @@
            #:create-regex-methods-dispatcher
            #:escape-string-custom
            #:escape-string-js
-           #:harden-session-cookie))
+           #:harden-session-cookie
+           #:session-user
+           #:delete-session-user
+           #:require-session-user))
