@@ -46,9 +46,8 @@ value for user."
 
 (defun require-session-user (&rest redirect-args)
   "Log a warning message and redirect if no user is set for the
-session. Otherwise, do nothing.
-
-REDIRECT-ARGS are used as keyword arguments to HUNCHENTOOT:REDIRECT."
+session. Otherwise, do nothing. REDIRECT-ARGS are used as keyword
+arguments to HUNCHENTOOT:REDIRECT."
   (multiple-value-bind (user presentp)
       (hunchentoot:session-value 'user)
     (declare (ignore user))
