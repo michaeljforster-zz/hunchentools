@@ -28,4 +28,7 @@
            #:abort-with-bad-request
            #:abort-with-forbidden
            #:abort-with-not-found
-           #:abort-with-internal-server-error))
+           #:abort-with-internal-server-error
+           #:create-uri-methods-dispatcher
+           #:create-prefix-methods-dispatcher
+           #:create-regex-methods-dispatcher))

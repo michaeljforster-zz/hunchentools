@@ -27,6 +27,9 @@
   :version "0.1.0"
   :author "Michael J. Forster <mike@forsterfamily.ca>"
   :license "MIT"
-  :depends-on (#:hunchentoot)
+  :depends-on (#:hunchentoot
+               #:alexandria
+               #:cl-ppcre)
   :components ((:file "package")
-               (:file "abort" :depends-on ("package"))))
+               (:file "abort" :depends-on ("package"))
+               (:file "dispatcher" :depends-on ("packages"))))
