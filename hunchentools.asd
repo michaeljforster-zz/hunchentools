@@ -36,4 +36,5 @@
                (:file "dispatcher" :depends-on ("package"))
                (:file "string-escaping" :depends-on ("package"))
                (:file "session-cookie" :depends-on ("package"))
-               (:file "session-user" :depends-on ("package"))))
+               (:file "session-user" :depends-on ("package"))
+               (:file "session-csrf-token" :depends-on ("package"))))
