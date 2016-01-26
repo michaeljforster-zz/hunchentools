@@ -1,4 +1,4 @@
-;;;; hunchentools.asd
+;;;; session-cookie.lisp
 
 ;;; The MIT License (MIT)
 ;;;
@@ -22,16 +22,13 @@
 ;;; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;;; SOFTWARE.
 
-(asdf:defsystem #:hunchentools
-  :description "Hunchentoot utility library"
-  :version "0.1.0"
-  :author "Michael J. Forster <mike@forsterfamily.ca>"
-  :license "MIT"
-  :depends-on (#:hunchentoot
-               #:alexandria
-               #:cl-ppcre)
-  :components ((:file "package")
-               (:file "abort" :depends-on ("package"))
-               (:file "dispatcher" :depends-on ("packages"))
-               (:file "string-escaping" :depends-on ("packages"))
-               (:file "session-cookie" :depends-on ("packages"))))
+(in-package #:hunchentools)
+
+(defun harden-session-cookie (&key securep (name "hunchentoot-session"))
+  "Set the HTTP-ONLY and secure flags of the outgoing cookie named
+NAME and set it to expire with the session.  NAME defaults to
+\"hunchentoot-session\"."
+  (alexandria:when-let ((cookie (hunchentoot:cookie-out name)))
+    (setf (hunchentoot:cookie-secure cookie) securep)
+    (setf (hunchentoot:cookie-http-only cookie) t)
+    (setf (hunchentoot:cookie-expires cookie) nil)))

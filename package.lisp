@@ -33,4 +33,5 @@
            #:create-prefix-methods-dispatcher
            #:create-regex-methods-dispatcher
            #:escape-string-custom
-           #:escape-string-js))
+           #:escape-string-js
+           #:harden-session-cookie))
