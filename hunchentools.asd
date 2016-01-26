@@ -32,4 +32,5 @@
                #:cl-ppcre)
   :components ((:file "package")
                (:file "abort" :depends-on ("package"))
-               (:file "dispatcher" :depends-on ("packages"))))
+               (:file "dispatcher" :depends-on ("packages"))
+               (:file "string-escaping" :depends-on ("packages"))))

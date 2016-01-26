@@ -31,4 +31,6 @@
            #:abort-with-internal-server-error
            #:create-uri-methods-dispatcher
            #:create-prefix-methods-dispatcher
-           #:create-regex-methods-dispatcher))
+           #:create-regex-methods-dispatcher
+           #:escape-string-custom
+           #:escape-string-js))
