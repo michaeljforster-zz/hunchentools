@@ -24,7 +24,7 @@
 
 (asdf:defsystem #:hunchentools
   :description "Hunchentoot utility library"
-  :version "0.1.0"
+  :version "1.0.0"
   :author "Michael J. Forster <mike@forsterfamily.ca>"
   :license "MIT"
   :depends-on (#:hunchentoot
