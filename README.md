@@ -25,15 +25,6 @@ Hunchentools is being deployed with SBCL on Linux/AMD64.
 ### Example
 
 ```lisp
-(defun render-login-page (message &optional (stream *standard-output*))
-  (with-html-page (stream)
-    (:div
-     (:p (cl-who:esc message))
-     (:form :action "/login" :method "post"
-            (:input :name "username" :type "text" :value "")
-            (:input :name "password" :type "password" :value "")
-            (:input :type "submit" :value "Log In")))))
-
 (hunchentoot:define-easy-handler (handle-login :uri "/login")
     ((username :parameter-type 'parse-username :request-type :post)
      (password :parameter-type 'parse-password :request-type :post))
