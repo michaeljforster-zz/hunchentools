@@ -11,15 +11,15 @@ Hunchentools depends on
 [CL-PPCRE](http://weitz.de/cl-ppcre/),
 and
 [Ironclad](http://method-combination.net/lisp/ironclad/).
-Hunchentools is being developed using
+Hunchentools is being developed with
 [SBCL](http://sbcl.org/), [CCL](http://ccl.clozure.com/),
 and [LispWorks](http://www.lispworks.com/) on OS X.
-Hunchentools is beging deployed with SBCL on Linux/AMD64.
+Hunchentools is being deployed with SBCL on Linux/AMD64.
 
 ### Installation
 
 ```lisp
-CL-USER> (ql:quickload "hunchentools")
+(ql:quickload "hunchentools")
 ```
 
 ### Example
@@ -99,11 +99,12 @@ CL-USER> (ql:quickload "hunchentools")
   (hunchentools:delete-session-user)
   (hunchentoot:redirect "/login"))
 
-(push (sli-hunchentools:create-uri-methods-dispatcher
-       "/logout"
-       :get
-       'handle-logout)
-      hunchentoot:*dispatch-table*)
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (push (hunchentools:create-uri-methods-dispatcher
+          "/logout"
+          :get
+          'handle-logout)
+        hunchentoot:*dispatch-table*))
 ```
 
 ### License
